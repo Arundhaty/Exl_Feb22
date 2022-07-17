@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="12359" started-at="2022-07-16T18:22:35Z" finished-at="2022-07-16T18:22:48Z">
+  <suite name="Default suite" duration-ms="24970" started-at="2022-07-17T15:53:00Z" finished-at="2022-07-17T15:53:25Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="12359" started-at="2022-07-16T18:22:35Z" finished-at="2022-07-16T18:22:48Z">
+    <test name="Default test" duration-ms="24970" started-at="2022-07-17T15:53:00Z" finished-at="2022-07-17T15:53:25Z">
       <class name="test.AddCustomerTest">
-        <test-method status="PASS" signature="userShouldBeAbleToCreateNewCustomer()[pri:0, instance:test.AddCustomerTest@4e268090]" name="userShouldBeAbleToCreateNewCustomer" duration-ms="12304" started-at="2022-07-16T18:22:35Z" finished-at="2022-07-16T18:22:47Z">
+        <test-method status="PASS" signature="userShouldBeAbleToCreateNewCustomer()[pri:0, instance:test.AddCustomerTest@4e268090]" name="userShouldBeAbleToCreateNewCustomer" duration-ms="24913" started-at="2022-07-17T15:53:00Z" finished-at="2022-07-17T15:53:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userShouldBeAbleToCreateNewCustomer -->

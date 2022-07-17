@@ -3,6 +3,7 @@ package page;
 import java.util.Random;
 
 import org.apache.commons.codec.language.bm.Rule.Phoneme;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -35,9 +36,11 @@ public class AddCustomerPage extends BasePage{
 		Assert.assertEquals(ADD_CONTACT_HEADER.getText(), addContactHeader, "Add Contact page is not avaialble");
 	}
 	
+	String insertedName; 
 	public void insertFullName(String fullName) {
 		int genNum = generateRandomNo(999);
-		FULL_NAME_ELEMENT.sendKeys(fullName + genNum);
+		insertedName = fullName + genNum;
+		FULL_NAME_ELEMENT.sendKeys(insertedName);
 	}
 
 	public void selectCompany(String company) {
@@ -50,7 +53,7 @@ public class AddCustomerPage extends BasePage{
 	}
 	
 	public void insertPhoneNum(String phoneNo) {
-		PHONE_NUMBER_ELEMENT.sendKeys(phoneNo + generateRandomNo(999));
+		PHONE_NUMBER_ELEMENT.sendKeys(phoneNo + generateRandomNo(999999));
 		
 	}
 	public void insertAddress(String address) {
@@ -76,6 +79,33 @@ public class AddCustomerPage extends BasePage{
 	public void clickSaveButton() {
 		SAVE_BUTTON_ELEMENT.click();
 	}
+	
+	//tbody/tr[1]/td[3]
+	//tbody/tr[2]/td[3]
+	//tbody/tr[3]/td[3]
+	//tbody/tr[i]/td[3]
+	//tbody/tr[1]/td[3]/following-sibling::td[4]/a[2]
+	
+	String before_xpath = "//tbody/tr[";
+	String after_xpath = "]/td[3]";
+	String after_xpath_delete = "]/td[3]/following-sibling::td[4]/a[2]";
+	
+	public void validateInsertedCustomerAndDelete() {
+		
+		for(int i = 1; i <= 10; i++) {
+			String namesFromList = driver.findElement(By.xpath(before_xpath + i + after_xpath)).getText();
+//			System.out.println(namesFromList);
+//			Assert.assertEquals(namesFromList, insertedName, "Inserted name is not available.");
+			if(namesFromList.equalsIgnoreCase(insertedName)) {
+				System.out.println("Inserted name exist");
+				driver.findElement(By.xpath(before_xpath + i + after_xpath_delete)).click();
+			}
+			
+			break;
+		}
+	}
+	
+	
 	
 
 }
