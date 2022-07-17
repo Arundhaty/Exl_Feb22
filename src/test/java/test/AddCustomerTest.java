@@ -55,6 +55,9 @@ public class AddCustomerTest {
 		addCustomerPage.insertZip(zip);
 		addCustomerPage.clickSaveButton();
 		
+		dashboardPage.clickListCustomerMenuElement();
+		addCustomerPage.validateInsertedCustomerAndDelete();
+		
 		
 		
 	}
